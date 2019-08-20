@@ -3,7 +3,7 @@ package org.sec.test.v201908
 /**
  * 多行文本
  */
-fun multitext() {
+fun multiText() {
     val text = """
         > First.  eat
         > Second. sleep
@@ -48,9 +48,41 @@ fun arrIt() {
     }
 }
 
+/**
+ * getter&setter
+ */
+fun setterAndGetter() {
+    val classA1 = ClassA()
+    classA1.name = "Calvin"
+    println(classA1)
+    classA1.readBook("<Three Kingdoms>")
+    val classA2 = ClassA()
+    classA2.name = "Rosa"
+    println(classA2)
+    classA2.play()
+}
+
+/**
+ * 扩展函数
+ */
+fun ClassA.play() {
+    println(this.name + " is playing")
+}
+
+/**
+ * 扩展为成员
+ */
+fun extendAsClassMethod() {
+    val b = ClassB()
+    b.read()
+}
+
 fun main() {
-    multitext()
+    multiText()
     switch(true)
     intIt()
     arrIt()
+    setterAndGetter()
+    ClassA.whatsUp()
+    extendAsClassMethod()
 }
